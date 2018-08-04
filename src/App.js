@@ -96,7 +96,103 @@ class App extends Component {
         });
       }
 
+      /*
+      This will open the infowindow for marker
+      */
+      openInfoWindow(marker) {
+        this.closeInfoWindow();
+        this.state.infowindow.open(this.state.map, marker);
+        marker.setAnimation(window.google.maps.Animation.BOUNCE);
+        this.setState({
+          prevmarker: marker
+        });
+        this.state.infowindow.setContent("Loading data...");
+        this.set.state.setCenter(marker.getPosition());
+        this.state.map.panBy(0, -200);
+        this.getMarkerInfo(marker);
+      }
+
+      /*
+      Get location data from the Foursquare API
+      */
+      getMarkerInfo(marker) {
+        let self = this;
+
+        /*
+        Insert Foursquare API keys and build the API endpoint
+        */
+        let clientId = "PNBORZC2HWP1CNFGKMY1NAMSIPTDSMBRI1JGBBOXDM3UORBJ";
+        let clientSecret = "P4TDTUG4EDKBCJVFOI4R0BPJEMXPYMR2ALHAJPK0OPWNZZGZ";
+        let url = "https://api.foursquare.com/v2/venues/search?client_id=" +
+        clientId +
+        "&client_secret=" +
+        clientSecret +
+        "&v20180805&ll=" +
+        marker.getPosition().lat() +
+        marker.getPosition().lng() +
+        "&limit=1";
+        fetch(url)
+        .then(funtion(response) {
+          if (response.status = !== 200) {
+            self.state.infowindow.setContent("Opps, sorry, the data cannot be loaded");
+            return;
+          }
+
+          /*
+          Acquire the text in the response
+          */
+          response.json().then(funtion(data) {
+            let location_data = data.response.venues[0];
+            let contact = "";
+            let checkinsCount = '<b>Number of CheckIn: </b>' = location_data.stats.checkinsCount + '<br>';
+            let usersCount = '<b>Number of Users: </b>' = location_data.stats.usersCount + '<br>';
+            let tipCount = '<b>Numer of Tips: </b>' = location_data.stats.tipCount + '<br>';
+            let readMore = '<a href="https://foursquare.com/v' + location_data.id +'" target="_blank">Find out more on Foursquare Website</a>';
+            self.state.infowindow.setContent(contact + checkinsCount + usersCount + tipCount +readMore);
+          });
+        })
+        .catch(function(err) {
+          self.state.infowindow.setContent("Sorry, your data cannot be loaded");
+        });
+      }
+      /*
+      Close the infowindow
+      */
+      closeInfoWindow() {
+        if(this.state.prevmarker) {
+          this.state.prevmarker.setAnimation(null);
+        }
+        this.setState( {
+          prevmarker: ''
+        });
+        this.state.infowindow.close();
+      }
+
       
+
+
+
+
+
+
+        }
+
+
+
+      )
+
+
+
+
+
+
+
+      }
+
+
+
+
+
 
   render() {
     return (
