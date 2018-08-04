@@ -188,4 +188,16 @@ class App extends Component {
 
       export default App;
 
-      
+      /*
+      Asynchronously load Google Maps
+      */
+      function loadMapJS(src) {
+        let ref = window.document.getElementsByTagName("script")[0];
+        let script = window.document.createElement("script");
+        script.src = src;
+        script.async = true;
+        script.onerror = funtion() {
+          document.write("Sorry, Google Maps cannot be loaded");
+        };
+        ref.parentNode.insertBefore(script, ref);
+      }
