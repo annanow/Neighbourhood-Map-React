@@ -35,7 +35,20 @@ class App extends Component {
     loadMapJS(
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyDcw4pl3Rbm5HIL9kiMkOYKJ31jNVq0RqE&callback=initMap"
     )
-  );
+  }
+  /*
+  Once the Google script is loaded, the map can be Initialised
+  */
+  initMap() {
+    let self = this;
+    let mapview = document.getElementById('map');
+    mapview.style.height = window.innerHeight + 'px';
+    let map = new.window.google.maps.Map(mapview, {
+      center: {lat: 52.2422274, lng: 20.9933234},
+      zoom: 14,
+      mapTypeControl: false
+    });
+     
   }
 
   render() {
