@@ -1,8 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import LocationList from './LocationList'
 
 class App extends Component {
+  /*
+  Constructor function
+  */
+  constructor(props) {
+    super(props);
+    this.state = {
+      /*
+      Gets locations from JSON file
+      */
+      alllocations: require("MyLocations.JSON"),
+      map: '',
+      infowindow: '',
+      prevmarker: ''
+    };
+    
+  }
+
   render() {
     return (
       <div className="App">
