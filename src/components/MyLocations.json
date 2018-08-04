@@ -1,3 +1,51 @@
 [
-  
+  {
+    "name": "Muzeum Narodowe",
+    "type": "Museum",
+    "latitude": 52.2310902,
+    "longitude": 21.0197452,
+    "streetAddress": "Aleje Jerozolimskie 3"
+  },
+  {
+    "name": "Palac Branickich",
+    "type": "Historical Object",
+    "latitude": 52.2311768,
+    "longitude": 21.0195802,
+    "streetAddress": "Nowy Swiat 18"
+  },
+  {
+    "name": "Zacheta - Narodowa Galeria Sztuki",
+    "type": "Art Gallery",
+    "latitude": 52.2401667,
+    "longitude": 21.0107678,
+    "streetAddress": "Plac Malachowskiego 3"
+  },
+  {
+    "name": "Uniwersytet Warszawski",
+    "type": "University",
+    "latitude": 52.2434852,
+    "longitude": 21.0099903,
+    "streetAddress": "Krakowskie Przedmiescie 26"
+  },
+  {
+    "name": "Teatr Wielki",
+    "type": "Opera",
+    "latitude": 52.2455771,
+    "longitude": 21.0057019,
+    "streetAddress": "Plac Teatralny 1"
+  },
+  {
+    "name": "Zamek Krolewski",
+    "type": "Castle",
+    "latitude": 52.2456204,
+    "longitude": 21.0109328,
+    "streetAddress": "Plac Zamkowy 1"
+  },
+  {
+    "name": "Ogrod Krasinskich",
+    "type": "Garden",
+    "latitude": 52.2450433,
+    "longitude": 20.9979498,
+    "streetAddress": "Andersa"
+  }
 ]
