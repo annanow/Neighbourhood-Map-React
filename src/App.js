@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       /*
-      Get locations from JSON file
+      Get locations from JSON file, those locations will be show to the user
       */
       alllocations: require("MyLocations.JSON"),
       map: '',
@@ -48,8 +48,55 @@ class App extends Component {
       zoom: 14,
       mapTypeControl: false
     });
-     
-  }
+
+    let infowindow = new.window.google.maps.infowindow({});
+    window.google.maps.event.addListener(infowindow, "closeclick", function() {
+      self.closeInfoWindow();
+      });
+
+      this.setState({
+        map: map,
+        infowindow: infowindow
+      });
+
+      window.google.maps.event.addDomListener(window, 'resize', function() {
+        let center = map.getCenter();
+        window.google.maps.event.trigger(map, 'resize');
+        self.state.map.setCenter(center);
+      });
+
+      window.google.maps.event.addListener(map, 'click', function() {
+        self.closeInfoWindow;
+      });
+
+      let alllocations = [];
+      this.state.alllocations.forEach(funtion(location) {
+        let.longname = location.name + " - " + location.type;
+        let marker = new.window.google.maps.Marker( {
+          position: new.window.google.maps.LatLng(
+            location.latitude,
+            location.longitude
+          ),
+          animation: window.google.maps.Animation.DROP,
+          map: map
+        });
+
+        marker.addListener('click', function() {
+          self.openInfoWindow(marker);
+          });
+
+          location.display = true;
+          location.longname = longname;
+          location.marker = marker;
+          alllocations.push(location);
+        });
+
+        this.setState( {
+          alllocations: alllocations
+        });
+      }
+
+      
 
   render() {
     return (
