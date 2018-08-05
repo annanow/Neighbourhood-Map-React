@@ -3,49 +3,42 @@
     "name": "POLIN",
     "type": "Museum",
     "latitude": 52.2494309,
-    "longitude": 20.9939423,
-    "streetAddress": "Anielewicza 6"
+    "longitude": 20.9939423
   },
   {
     "name": "Muzeum Karykatury",
     "type": "Museum",
     "latitude": 52.244989,
-    "longitude": 21.01314,
-    "streetAddress": "Kozia 11"
+    "longitude": 21.01314
   },
   {
     "name": "Zachęta - Narodowa Galeria Sztuki",
     "type": "Art Gallery",
     "latitude": 52.2393477,
-    "longitude": 21.0118251,
-    "streetAddress": "Plac Malachowskiego 3"
+    "longitude": 21.0118251
   },
   {
     "name": "Uniwersytet Warszawski",
     "type": "University",
     "latitude": 52.239734,
-    "longitude": 21.0177113 ,
-    "streetAddress": "Krakowskie Przedmiescie 26"
+    "longitude": 21.0177113
   },
   {
     "name": "Teatr Wielki",
     "type": "Opera",
     "latitude": 52.2436869,
-    "longitude": 21.0102582,
-    "streetAddress": "Plac Teatralny 1"
+    "longitude": 21.0102582
   },
   {
     "name": "Rynek Starego Miasta",
     "type": "Old Market Square",
     "latitude": 52.2496759,
-    "longitude": 21.0121602,
-    "streetAddress": "Stare Miasto"
+    "longitude": 21.0121602
   },
   {
     "name": "Ogród Krasińskich",
     "type": "Garden",
     "latitude": 52.2484065,
-    "longitude": 21.0003574,
-    "streetAddress": "Andersa"
+    "longitude": 21.0003574
   }
 ]
