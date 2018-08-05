@@ -33,7 +33,7 @@ class App extends Component {
     Loading the Google Maps script asynchronously
     */
     loadMapJS(
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBj4BefjHdVYNZzJ0QRK4qrIzbDNScvgos&callback=initMap"
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyCMHtGBw-s0izV1NW9cw8GN930rA4HJN9o&callback=initMap"
     )
   }
   /*
@@ -107,7 +107,7 @@ class App extends Component {
           prevmarker: marker
         });
         this.state.infowindow.setContent("Loading data...");
-        this.set.state.setCenter(marker.getPosition());
+        this.state.map.setCenter(marker.getPosition());
         this.state.map.panBy(0, -200);
         this.getMarkerInfo(marker);
       }
