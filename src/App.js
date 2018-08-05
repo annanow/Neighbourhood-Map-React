@@ -33,7 +33,7 @@ class App extends Component {
     Loading the Google Maps script asynchronously
     */
     loadMapJS(
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyDcw4pl3Rbm5HIL9kiMkOYKJ31jNVq0RqE&callback=initMap"
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyBj4BefjHdVYNZzJ0QRK4qrIzbDNScvgos&callback=initMap"
     )
   }
   /*
