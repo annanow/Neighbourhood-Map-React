@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LocationList from './LocationList'
+import LocationList from './components/LocationList.js'
 
 class App extends Component {
   /*
@@ -11,7 +11,7 @@ class App extends Component {
       /*
       Get locations from JSON file, those locations will be show to the user
       */
-      alllocations: require("MyLocations.JSON"),
+      alllocations: require("./components/MyLocations.json"),
       map: '',
       infowindow: '',
       prevmarker: ''
@@ -21,7 +21,7 @@ class App extends Component {
     */
     this.initMap = this.initMap.bind(this);
     this.openInfoWindow = this.openInfoWindow.bind(this);
-    this.closeInfoWindow - this.closeInfoWindow.bind(this);
+    this.closeInfoWindow = this.closeInfoWindow.bind(this);
   }
 
   componentDidMount() {
@@ -43,20 +43,20 @@ class App extends Component {
     let self = this;
     let mapview = document.getElementById('map');
     mapview.style.height = window.innerHeight + 'px';
-    let map = new.window.google.maps.Map(mapview, {
+    let map = new window.google.maps.Map(mapview, {
       center: {lat: 52.2422274, lng: 20.9933234},
       zoom: 14,
       mapTypeControl: false
     });
 
-    let infowindow = new.window.google.maps.infowindow({});
-    window.google.maps.event.addListener(infowindow, "closeclick", function() {
+    let InfoWindow = new window.google.maps.InfoWindow({});
+    window.google.maps.event.addListener(InfoWindow, "closeclick", function() {
       self.closeInfoWindow();
       });
 
       this.setState({
         map: map,
-        infowindow: infowindow
+        infowindow: InfoWindow
       });
 
       window.google.maps.event.addDomListener(window, 'resize', function() {
@@ -66,14 +66,14 @@ class App extends Component {
       });
 
       window.google.maps.event.addListener(map, 'click', function() {
-        self.closeInfoWindow;
+        self.closeInfoWindow();
       });
 
       let alllocations = [];
-      this.state.alllocations.forEach(funtion(location) {
-        let.longname = location.name + " - " + location.type;
-        let marker = new.window.google.maps.Marker( {
-          position: new.window.google.maps.LatLng(
+      this.state.alllocations.forEach(function(location) {
+        let longname = location.name + " - " + location.type;
+        let marker = new window.google.maps.Marker( {
+          position: new window.google.maps.LatLng(
             location.latitude,
             location.longitude
           ),
@@ -132,8 +132,8 @@ class App extends Component {
         marker.getPosition().lng() +
         "&limit=1";
         fetch(url)
-        .then(funtion(response) {
-          if (response.status = !== 200) {
+        .then(function(response) {
+          if (response.status !== 200) {
             self.state.infowindow.setContent("Opps, sorry, the data cannot be loaded");
             return;
           }
@@ -141,12 +141,12 @@ class App extends Component {
           /*
           Acquire the text in the response
           */
-          response.json().then(funtion(data) {
+          response.json().then(function(data) {
             let location_data = data.response.venues[0];
             let contact = "";
-            let checkinsCount = '<b>Number of CheckIn: </b>' = location_data.stats.checkinsCount + '<br>';
-            let usersCount = '<b>Number of Users: </b>' = location_data.stats.usersCount + '<br>';
-            let tipCount = '<b>Numer of Tips: </b>' = location_data.stats.tipCount + '<br>';
+            let checkinsCount = '<b>Number of CheckIn: </b>' + location_data.stats.checkinsCount + '<br>';
+            let usersCount = '<b>Number of Users: </b>' + location_data.stats.usersCount + '<br>';
+            let tipCount = '<b>Numer of Tips: </b>' + location_data.stats.tipCount + '<br>';
             let readMore = '<a href="https://foursquare.com/v' + location_data.id +'" target="_blank">Find out more on Foursquare Website</a>';
             self.state.infowindow.setContent(contact + checkinsCount + usersCount + tipCount +readMore);
           });
@@ -196,7 +196,7 @@ class App extends Component {
         let script = window.document.createElement("script");
         script.src = src;
         script.async = true;
-        script.onerror = funtion() {
+        script.onerror = function() {
           document.write("Sorry, Google Maps cannot be loaded");
         };
         ref.parentNode.insertBefore(script, ref);

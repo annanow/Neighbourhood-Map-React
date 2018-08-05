@@ -31,8 +31,8 @@ class LocationList extends Component {
     });
 
     this.setState({
-    'locations' = locations,
-    'query' = value
+    locations: locations,
+    query: value
     });
   }
 
@@ -46,7 +46,7 @@ class LocationList extends Component {
   */
   render () {
     var locationlist = this.state.locations.map(function (listItem, index) {
-      return {
+      return (
         <LocationItem
           key={index}
           openInfoWindow={this.props.openInfoWindow.bind(this)}
@@ -54,7 +54,7 @@ class LocationList extends Component {
         />
       );
     }, this);
-      return
+      return (
       <div className="search">
         <input
           role="search"
