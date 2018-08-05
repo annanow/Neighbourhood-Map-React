@@ -1,6 +1,6 @@
 # Neighbourhood Map React
 
-This project is part od the Udacity FEND Nanodegree. **Neighbourhood Map React** is a single page app presenting certain places in the neighbourhood. In this case - in Warsaw, Poland. The app is based na a React framework and uses Google Maps and Foursquare - for location-based services.
+This project is part od the Udacity FEND Nanodegree. **Neighbourhood Map React** is a single page app presenting certain places in the neighbourhood. In this case - in Warsaw, Poland. The app is based na a React framework and uses Google Maps and Foursquare - for location-based services. Using Foursquare wasn't a must in this project, however I wanted to demonstrate usage of different services APIs in one app and how they work together. 
 
 
 ## How to run the project
