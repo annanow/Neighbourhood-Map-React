@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import LocationList from './components/LocationList.js'
+import LocationList from './components/LocationList'
 
 class App extends Component {
   /*
@@ -45,7 +45,7 @@ class App extends Component {
     mapview.style.height = window.innerHeight + 'px';
     let map = new window.google.maps.Map(mapview, {
       center: {lat: 52.2456706, lng: 21.0083569},
-      zoom: 15,
+      zoom: 14,
       mapTypeControl: false
     });
 
@@ -96,7 +96,7 @@ class App extends Component {
         });
       }
 
-      /*
+      /**
       This will open the infowindow for marker
       */
       openInfoWindow(marker) {
@@ -112,8 +112,8 @@ class App extends Component {
         this.getMarkerInfo(marker);
       }
 
-      /*
-      Get location data from the Foursquare API
+      /**
+      Get location data from the Foursquare API.
       */
       getMarkerInfo(marker) {
         let self = this;
@@ -127,8 +127,8 @@ class App extends Component {
         clientId +
         "&client_secret=" +
         clientSecret +
-        "&v20180805&ll=" +
-        marker.getPosition().lat() +
+        "&v=20180130&ll=" +
+        marker.getPosition().lat() + "," +
         marker.getPosition().lng() +
         "&limit=1";
         fetch(url)
@@ -143,19 +143,24 @@ class App extends Component {
           */
           response.json().then(function(data) {
             let location_data = data.response.venues[0];
-            let contact = "";
-            let checkinsCount = '<b>Number of CheckIn: </b>' + location_data.stats.checkinsCount + '<br>';
-            let usersCount = '<b>Number of Users: </b>' + location_data.stats.usersCount + '<br>';
-            let tipCount = '<b>Numer of Tips: </b>' + location_data.stats.tipCount + '<br>';
-            let readMore = '<a href="https://foursquare.com/v' + location_data.id +'" target="_blank">Find out more on Foursquare Website</a>';
-            self.state.infowindow.setContent(contact + checkinsCount + usersCount + tipCount +readMore);
+            let name = `<h3>${location_data.name}` + '<br>';
+            let street = `<p>${location_data.location.formattedAddress[0]}</p>`;
+            let checkinsCount = '<b>Number of checkins: </b>' +
+            location_data.stats.checkinsCount + '<br>';
+            let usersCount = '<b>Number of users: </b>' +
+            location_data.stats.usersCount + '<br>';
+            let tipCount = '<b>Numer of tips: </b>' +
+            location_data.stats.tipCount + '<br>';
+            let findOutMore = '<a href="https://foursquare.com/v' +
+            location_data.id +'" target="_blank">Find out more on Foursquare Website</a>';
+            self.state.infowindow.setContent(name + street + checkinsCount + usersCount + tipCount + findOutMore);
           });
         })
         .catch(function(err) {
           self.state.infowindow.setContent("Sorry, your data cannot be loaded");
         });
       }
-      /*
+      /**
       Close the infowindow
       */
       closeInfoWindow() {
@@ -188,7 +193,7 @@ class App extends Component {
 
       export default App;
 
-      /*
+      /**
       Asynchronously load Google Maps
       */
       function loadMapJS(src) {

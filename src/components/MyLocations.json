@@ -12,10 +12,10 @@
     "longitude": 21.01314
   },
   {
-    "name": "Zachęta - Narodowa Galeria Sztuki",
-    "type": "Art Gallery",
-    "latitude": 52.2393477,
-    "longitude": 21.0118251
+    "name": "AïOLI CANTINE",
+    "type": "Restaurant",
+    "latitude": 52.2359242,
+    "longitude": 21.0116997
   },
   {
     "name": "Uniwersytet Warszawski",
@@ -31,7 +31,7 @@
   },
   {
     "name": "Rynek Starego Miasta",
-    "type": "Old Market Square",
+    "type": "Square",
     "latitude": 52.2496759,
     "longitude": 21.0121602
   },

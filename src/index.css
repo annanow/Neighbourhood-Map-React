@@ -30,6 +30,7 @@ body {
   font-style: italic;
   color: white;
   border: 3px solid darkgrey;
+  list-style: none;
 }
 
 .button {
@@ -67,14 +68,14 @@ body {
   }
 
   .search-field {
-    width: 100%;
+    width: 93%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
   }
 
   .location-list {
-    width: 100%;
+    width: 93%;
     margin-left: auto;
     margin-right: auto;
   }
