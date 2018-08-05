@@ -12,14 +12,49 @@ body {
 }
 
 .search-field {
-  width: 350px;
+  width: 428px;
   height: 20px;
   margin-left: 10px;
   padding: 10px;
+  background-color: #e6edef;
+  font-size: 1.4em;
+  border: 3px solid darkgrey;
 }
 
 .location-list {
   overflow: auto;
-  padding-top: 10px;
-  margin: 5px;
+  background-color: #e6edef;
+  padding: 10px;
+  margin-left: 10px;
+  font-size: 1.2em;
+  font-style: italic;
+  border: 3px solid darkgrey;
+}
+
+.button {
+  padding: 10px;
+  background-color: #f4f6f7;
+  width: 340px;
+  text-align: center;
+}
+
+.box {
+  cursor: default;
+}
+
+.box:hover {
+  color: #f4f6f7;
+  background-color: #1091b7;
+}
+
+.place {
+  color: #e6edef;
+  cursor: default;
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.place:hover {
+  background-color: #e6edef;
+  color: black;
 }
