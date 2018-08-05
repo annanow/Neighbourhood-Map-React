@@ -44,7 +44,7 @@ class App extends Component {
     let mapview = document.getElementById('map');
     mapview.style.height = window.innerHeight + 'px';
     let map = new window.google.maps.Map(mapview, {
-      center: {lat: 52.243168, lng: 21.0144238},
+      center: {lat: 52.2456706, lng: 21.0083569},
       zoom: 15,
       mapTypeControl: false
     });
