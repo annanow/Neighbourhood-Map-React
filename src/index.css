@@ -18,16 +18,17 @@ body {
   padding: 10px;
   background-color: #e6edef;
   font-size: 1.4em;
-  border: 3px solid darkgrey;
+  border: 3px solid #1c2628;
 }
 
 .location-list {
   overflow: auto;
-  background-color: #e6edef;
+  background-color: #1c2628;
   padding: 10px;
   margin-left: 10px;
   font-size: 1.2em;
   font-style: italic;
+  color: white;
   border: 3px solid darkgrey;
 }
 
