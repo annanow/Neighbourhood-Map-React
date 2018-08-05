@@ -1,17 +1,17 @@
 [
   {
-    "name": "Muzeum Narodowe",
+    "name": "POLIN",
     "type": "Museum",
-    "latitude": 52.2315987,
-    "longitude": 21.02261,
-    "streetAddress": "Aleje Jerozolimskie 3"
+    "latitude": 52.2416861,
+    "longitude": 20.9972199,
+    "streetAddress": "Anielewicza 6"
   },
   {
-    "name": "Palac Branickich",
-    "type": "Historical Object",
-    "latitude": 52.2467626,
-    "longitude": 21.0092425,
-    "streetAddress": "Nowy Swiat 18"
+    "name": "Muzeum Karykatury",
+    "type": "Museum",
+    "latitude": 52.2416858,
+    "longitude": 21.0059747,
+    "streetAddress": "Kozia 11"
   },
   {
     "name": "Zacheta - Narodowa Galeria Sztuki",
