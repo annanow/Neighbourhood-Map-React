@@ -58,7 +58,7 @@ class LocationList extends Component {
       <div className="search">
         <input
           role="search"
-          aria-labelledby="filter"
+          aria-label="Search for a location"
           id="search-field"
           className="search-field"
           type="text"
@@ -66,7 +66,7 @@ class LocationList extends Component {
           value={this.state.query}
           onChange={this.filterLocations}
         />
-        <ul className="location-list">
+        <ul className="location-list" role="listbox" aria-label="Select your location">
           {this.state.suggestions && locationlist}
         </ul>
       </div>

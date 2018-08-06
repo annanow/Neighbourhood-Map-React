@@ -150,7 +150,7 @@ class App extends Component {
             let usersCount = '<b>Number of users: </b>' +
             location_data.stats.usersCount + '<br>';
             let tipCount = '<b>Numer of tips: </b>' +
-            location_data.stats.tipCount + '<br>';
+            location_data.stats.tipCount + '<br>' + '<br>';
             let findOutMore = '<a href="https://foursquare.com/v' +
             location_data.id +'" target="_blank">Find out more on Foursquare Website</a>';
             self.state.infowindow.setContent(name + street + checkinsCount + usersCount + tipCount + findOutMore);
@@ -184,7 +184,7 @@ class App extends Component {
               openInfoWindow={this.openInfoWindow}
               closeInfoWindow={this.closeInfoWindow}
             />
-            <div id="map">
+            <div id="map" role="application" aria-label="Warsaw neighbourhood">
             </div>
           </div>
           );

@@ -9,6 +9,7 @@ class LocationItem extends React.Component {
     return (
       <li
         role="button"
+        aria-label="Location"
         className="box"
         tabIndex="0"
         onKeyPress={this.props.openInfoWindow.bind(
