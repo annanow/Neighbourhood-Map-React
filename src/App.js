@@ -173,7 +173,7 @@ class App extends Component {
         this.state.infowindow.close();
       }
       /*
-      Render function od App
+      Render function of App
       */
       render() {
         return (
