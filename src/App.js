@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import LocationList from './components/LocationList'
 
+
+
 class App extends Component {
   /*
   Constructor function
@@ -35,6 +37,18 @@ class App extends Component {
     loadMapJS(
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyCMHtGBw-s0izV1NW9cw8GN930rA4HJN9o&callback=initMap"
     )
+
+    /*
+    This function will gracefully handle Google Maps data requests that fail
+    */
+    window.gm_authFailure = function() {
+      let noMap = document.querySelector('.map');
+      noMap.innerHTML = '';
+      noMap.innerHTML = <div class="google-maps-api-error">
+      <h1>Sorry, even Vincent cannot find Google Maps</h1>
+      <img src="./errorwindow.jpg" alt="Sorry, Google Maps cannot be loaded"/>
+    </div>
+    };
   }
   /*
   Once the Google script is loaded, the map can be Initialised
@@ -96,7 +110,7 @@ class App extends Component {
         });
       }
 
-      /**
+      /*
       This will open the infowindow for marker
       */
       openInfoWindow(marker) {
@@ -112,7 +126,7 @@ class App extends Component {
         this.getMarkerInfo(marker);
       }
 
-      /**
+      /*
       Get location data from the Foursquare API.
       */
       getMarkerInfo(marker) {
@@ -160,7 +174,7 @@ class App extends Component {
           self.state.infowindow.setContent("Sorry, your data cannot be loaded");
         });
       }
-      /**
+      /*
       Close the infowindow
       */
       closeInfoWindow() {
@@ -197,7 +211,7 @@ class App extends Component {
 
       export default App;
 
-      /**
+      /*
       Asynchronously load Google Maps
       */
       function loadMapJS(src) {
