@@ -198,11 +198,7 @@ class App extends Component {
               openInfoWindow={this.openInfoWindow}
               closeInfoWindow={this.closeInfoWindow}
             />
-            <div id="container">
-              <div id="map-container" role="application" aria-label="Google Map">
-                <div id="map" role="region" aria-label="Warsaw neighbourhood">
-            </div>
-          </div>
+            <div id="map" role="application" aria-label="Warsaw neighbourhood">
         </div>
       </div>
           );
