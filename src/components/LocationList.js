@@ -66,7 +66,7 @@ class LocationList extends Component {
           value={this.state.query}
           onChange={this.filterLocations}
         />
-        <ul className="location-list" role="listbox" aria-label="Select your location">
+        <ul className="location-list" aria-label="Select your location">
           {this.state.suggestions && locationlist}
         </ul>
       </div>
