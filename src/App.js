@@ -37,18 +37,6 @@ class App extends Component {
     loadMapJS(
       "https://maps.googleapis.com/maps/api/js?key=AIzaSyCMHtGBw-s0izV1NW9cw8GN930rA4HJN9o&callback=initMap"
     )
-
-    /*
-    This function will gracefully handle Google Maps data requests that fail
-    */
-    window.gm_authFailure = function() {
-      let noMap = document.querySelector('.map');
-      noMap.innerHTML = '';
-      noMap.innerHTML = <div class="google-maps-api-error">
-      <h1>Sorry, even Vincent cannot find Google Maps</h1>
-      <img src="./errorwindow.jpg" alt="Sorry, Google Maps cannot be loaded"/>
-    </div>
-    };
   }
   /*
   Once the Google script is loaded, the map can be Initialised
@@ -198,8 +186,8 @@ class App extends Component {
               openInfoWindow={this.openInfoWindow}
               closeInfoWindow={this.closeInfoWindow}
             />
-            <div id="map" role="application" aria-label="Warsaw neighbourhood">
-        </div>
+                <div id="map" role="application" aria-label="Warsaw neighbourhood">
+            </div>
       </div>
           );
         }
@@ -220,3 +208,15 @@ class App extends Component {
         };
         ref.parentNode.insertBefore(script, ref);
       }
+      
+      /*
+      This function will gracefully handle Google Maps data requests that fail
+      */
+      window.gm_authFailure = function() {
+        let noMap = document.querySelector('root');
+        noMap.innerHTML = '';
+        noMap.innerHTML = <div class="google-maps-api-error">
+          <h1>Sorry, even Vincent cannot find Google Maps</h1>
+          <img src="./errorwindow.jpg" alt="Sorry, Google Maps cannot be loaded"/>
+        </div>
+      };
